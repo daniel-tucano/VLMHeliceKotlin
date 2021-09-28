@@ -1,0 +1,4 @@
+package aerodynamics
+
+interface AerodynamicEntity {
+}
