@@ -35,7 +35,7 @@ class SolvedPropellerPanelBlade(
 
     fun plotThrustDistribution() {
         val nStations = solvedPropellerPanelStations.lastIndex
-        val x = (0..nStations).toList()
+        val x = (0..nStations).toList().map { it.toDouble() }
         val y = solvedPropellerPanelStations.map { it.totalThrust }
         pythonExecution {
             plot(x,y)

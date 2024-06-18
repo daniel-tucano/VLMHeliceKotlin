@@ -18,7 +18,7 @@ class SolvedPropellerPanelStation(
         it dot Direction3D.MAIN_Z_DIRECTION
     }
     internal val panelsAxialTorques: List<Double> = panelsForces.mapIndexed { index, vector3D ->
-        (propellerPanelStation.panelsQuarterChordMiddlePoints[index].toVector3D() cross vector3D) dot Direction3D.MAIN_Z_DIRECTION
+        (propellerPanelStation.panelsQuarterChordMiddlePoints[index].asVector3D() cross vector3D) dot Direction3D.MAIN_Z_DIRECTION
     }
 
     val totalThrust = panelsThrustComponent.sum()

@@ -80,7 +80,7 @@ class PropellerPanelBlade(
 
     private fun createPanelStations(): List<PropellerPanelStation> {
         val (tControlPoints, sControlPoints) = controlPointsParametricCamberSurfaceParameters
-        return (0 until nStations).map { iStation ->
+        val result = (0 until nStations).map { iStation ->
             PropellerPanelStation((0 until nPanelsPerStation).map { iPanel ->
                 VLMPanelImp(
                     createPanelGeometryPoints(iStation, iPanel),
@@ -96,6 +96,7 @@ class PropellerPanelBlade(
                 )
             })
         }
+        return result
     }
 
     private fun createPanelGeometryPoints(iStation: Int, iPanel: Int): List<Point3D> {

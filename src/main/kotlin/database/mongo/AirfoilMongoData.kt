@@ -1,13 +1,14 @@
-package airfoil
+package database.mongo
 
+import airfoil.AirfoilGeometry
+import airfoil.AirfoilPure
+import airfoil.RunData
 import com.mongodb.client.MongoCollection
-import com.mongodb.client.MongoDatabase
 import org.litote.kmongo.and
 import org.litote.kmongo.eq
-import org.litote.kmongo.findOne
 import plane.elements.Point2D
 
-data class AirfoilData(
+data class AirfoilMongoData(
     val name: String,
     val airfoilID: Int,
     val geometrie: AirfoilDataGeometrie,
