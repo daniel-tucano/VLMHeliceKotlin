@@ -41,9 +41,14 @@ class AirfoilGeometry(val topPoints: List<Point2D>, val bottomPoints: List<Point
             )
         }
 
-    fun scale(scalar: Double): AirfoilGeometry {
+    override fun scale(scalar: Double): AirfoilGeometry {
         return AirfoilGeometry(
-            topPoints.map { Point2D(it.x * scalar, it.y - this.centroid.y * scalar) },
+            topPoints.map {
+                Point2D(
+                    it.x * scalar,
+                    it.y * scalar
+                )
+            },
             bottomPoints.map {
                 Point2D(
                     it.x * scalar,
